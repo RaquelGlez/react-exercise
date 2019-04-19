@@ -1,0 +1,24 @@
+webpackHotUpdate("main",{
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/assets/App.css":
+/*!*******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/assets/App.css ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+exports.i(__webpack_require__(/*! -!../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!slick-carousel/slick/slick.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick.css"), "");
+exports.i(__webpack_require__(/*! -!../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!slick-carousel/slick/slick-theme.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/slick-carousel/slick/slick-theme.css"), "");
+
+// module
+exports.push([module.i, "\n.App {\n  text-align: center;\n}\n\n.carousel2 {\n  background-color: aqua\n}\n\n.dots-img {\n  bottom: -50px;\n\n}\n\n.img-item {\n  max-width: 400%\n}\n\n.slick-prev {\n  left: -45px;\n  z-index: 9999;\n\n}\n\n.slick-next {\n  right: -45px;\n  display: inline-block;\n  z-index: 9999;\n}", ""]);
+
+// exports
+
+
+/***/ })
+
+})
+//# sourceMappingURL=main.bbaf29d1b4bde751012a.hot-update.js.map

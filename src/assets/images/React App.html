@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="stylesheet" href="./React App_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+</style><style type="text/css">@charset 'UTF-8';
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url(data:image/gif;base64,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) center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url(/static/media/slick.ced611da.eot);
+    src: url(/static/media/slick.ced611da.eot?#iefix) format('embedded-opentype'), url(/static/media/slick.b7c9e1e4.woff) format('woff'), url(/static/media/slick.d41f55a7.ttf) format('truetype'), url(/static/media/slick.f97e3bbf.svg#slick) format('svg');
+}
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev
+{
+    left: -25px;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content: '\2190';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '\2192';
+}
+
+.slick-next
+{
+    right: -25px;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: '\2192';
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '\2190';
+}
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '\2022';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
+</style><style type="text/css">
+.App {
+  text-align: center;
+}
+
+.carousel2 {
+  background-color: aqua
+}
+
+.dots-img {
+  bottom: -50px;
+  /* padding: 0 20px;
+  margin: 0 20px; */
+}
+
+.img-item {
+  max-width: 400%
+}
+
+.slick-prev {
+  left: -45px;
+  z-index: 9999;
+
+}
+
+.slick-next {
+  right: -45px;
+  display: inline-block;
+  z-index: 9999;
+}</style><script charset="utf-8" src="./React App_files/main.448a70c8acab081e18ec.hot-update.js.descarga"></script><script charset="utf-8" src="./React App_files/main.bbaf29d1b4bde751012a.hot-update.js.descarga"></script><script charset="utf-8" src="./React App_files/main.32c9e3cd9ce27355fc4b.hot-update.js.descarga"></script><script charset="utf-8" src="./React App_files/main.bb53e2291bfa282125ee.hot-update.js.descarga"></script><script charset="utf-8" src="./React App_files/main.5c33adf066276f6c9bd9.hot-update.js.descarga"></script></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div><div class="carousel1"><h1>Parte 1</h1><div><div><h2>Carousel example</h2><div class="slick-slider slick-initialized" dir="ltr"><button type="button" data-role="none" class="slick-arrow slick-prev" style="display: block;"> Previous</button><div class="slick-list"><div class="slick-track" style="width: 14573px; opacity: 1; transform: translate3d(-1121px, 0px, 0px);"><div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1121px;"><div><div class="mb-5" tabindex="-1" style="width: 100%; display: inline-block;"><h3>6</h3></div></div></div><div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>1</h3></div></div></div><div data-index="1" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>2</h3></div></div></div><div data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>3</h3></div></div></div><div data-index="3" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>4</h3></div></div></div><div data-index="4" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>5</h3></div></div></div><div data-index="5" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 1121px;"><div><div class="mb-5" tabindex="-1" style="width: 100%; display: inline-block;"><h3>6</h3></div></div></div><div data-index="6" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>1</h3></div></div></div><div data-index="7" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>2</h3></div></div></div><div data-index="8" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>3</h3></div></div></div><div data-index="9" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>4</h3></div></div></div><div data-index="10" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1121px;"><div><div tabindex="-1" style="width: 100%; display: inline-block;"><h3>5</h3></div></div></div><div data-index="11" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 1121px;"><div><div class="mb-5" tabindex="-1" style="width: 100%; display: inline-block;"><h3>6</h3></div></div></div></div></div><button type="button" data-role="none" class="slick-arrow slick-next" style="display: block;"> Next</button><div class="slick-dots" style="background-color: pink; border-radius: 10px; padding: 10px;"><ul style="margin: 0px;"> <li class="slick-active"><div style="width: 30px; color: blue; border: 1px solid blue;">1</div></li><li class=""><div style="width: 30px; color: blue; border: 1px solid blue;">2</div></li><li class=""><div style="width: 30px; color: blue; border: 1px solid blue;">3</div></li><li class=""><div style="width: 30px; color: blue; border: 1px solid blue;">4</div></li><li class=""><div style="width: 30px; color: blue; border: 1px solid blue;">5</div></li><li class=""><div style="width: 30px; color: blue; border: 1px solid blue;">6</div></li> </ul></div></div></div></div></div></div><div class="mt-5"><div class="carousel2 "><h1 class="pt-5">Parte 2</h1><div><div><h2>Carousel Cards</h2><div class="row justify-content-center"><div class="col-8"><div class="slick-slider slick-initialized" dir="ltr"><button type="button" data-role="none" class="slick-arrow slick-prev" style="display: block;"> Previous</button><div class="slick-list"><div class="slick-track" style="width: 6633px; opacity: 1; transform: translate3d(-737px, 0px, 0px);"><div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="4" src="./React App_files/image-4.d5e8dcd1.jpg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 4"><div class="mx-auto my-4"><h5>Landscape 4</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Hac purus conubia integer inceptos condimentum lectus facilisis diam senectus molestie placerat, mollis ut euismod duis odio etiam est mus rutrum.</p></div></div></div></div></div></div></div><div data-index="0" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="1" src="./React App_files/image-1.fb5fc42f.jpg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 1"><div class="mx-auto my-4"><h5>Landscape 1</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Lorem ipsum dolor sit amet consectetur adipiscing elit torquent venenatis augue purus, dictumst volutpat hac habitasse morbi dis sem dui leo vel, suscipit mattis lacus pulvinar condimentum erat aliquet tortor ridiculus praesent.</p></div></div></div></div></div></div></div><div data-index="1" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="2" src="./React App_files/image-2.27dca46c.jpeg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 2"><div class="mx-auto my-4"><h5>Landscape 2</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Ligula aliquet posuere torquent gravida lectus class quisque tempus rhoncus, sapien conubia aenean nibh purus sollicitudin viverra euismod lacus, etiam ornare iaculis interdum felis porttitor habitasse dictum. </p></div></div></div></div></div></div></div><div data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="3" src="./React App_files/image-3.67ef571c.jpg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 3"><div class="mx-auto my-4"><h5>Landscape 3</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Mi fermentum convallis placerat dis id accumsan augue molestie dictum urna enim eget suscipit tristique, dictumst velit himenaeos odio ultricies morbi litora varius sociis laoreet lobortis ac.</p></div></div></div></div></div></div></div><div data-index="3" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="4" src="./React App_files/image-4.d5e8dcd1.jpg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 4"><div class="mx-auto my-4"><h5>Landscape 4</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Hac purus conubia integer inceptos condimentum lectus facilisis diam senectus molestie placerat, mollis ut euismod duis odio etiam est mus rutrum.</p></div></div></div></div></div></div></div><div data-index="4" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="1" src="./React App_files/image-1.fb5fc42f.jpg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 1"><div class="mx-auto my-4"><h5>Landscape 1</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Lorem ipsum dolor sit amet consectetur adipiscing elit torquent venenatis augue purus, dictumst volutpat hac habitasse morbi dis sem dui leo vel, suscipit mattis lacus pulvinar condimentum erat aliquet tortor ridiculus praesent.</p></div></div></div></div></div></div></div><div data-index="5" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="2" src="./React App_files/image-2.27dca46c.jpeg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 2"><div class="mx-auto my-4"><h5>Landscape 2</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Ligula aliquet posuere torquent gravida lectus class quisque tempus rhoncus, sapien conubia aenean nibh purus sollicitudin viverra euismod lacus, etiam ornare iaculis interdum felis porttitor habitasse dictum. </p></div></div></div></div></div></div></div><div data-index="6" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="3" src="./React App_files/image-3.67ef571c.jpg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 3"><div class="mx-auto my-4"><h5>Landscape 3</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Mi fermentum convallis placerat dis id accumsan augue molestie dictum urna enim eget suscipit tristique, dictumst velit himenaeos odio ultricies morbi litora varius sociis laoreet lobortis ac.</p></div></div></div></div></div></div></div><div data-index="7" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 737px;"><div><div class="row" tabindex="-1" style="width: 100%; display: inline-block;"><div class="card mt-5 mb-3"><div class="row no-gutters"><div class="col-md-4 text-center my-auto"><img id="4" src="./React App_files/image-4.d5e8dcd1.jpg" class="img-fluid mx-auto photo-speaker animated" alt="Landscape 4"><div class="mx-auto my-4"><h5>Landscape 4</h5></div></div><div class="col-md-8 my-auto"><div class="card-body "><p class="speaker-text text-center ">Hac purus conubia integer inceptos condimentum lectus facilisis diam senectus molestie placerat, mollis ut euismod duis odio etiam est mus rutrum.</p></div></div></div></div></div></div></div></div></div><button type="button" data-role="none" class="slick-arrow slick-next" style="display: block;"> Next</button><ul class="slick-dots dots-img slick-thumb" style="display: block;"><li class="slick-active"><a><img src="./React App_files/image-1.fb5fc42f.jpg" class="img-item img-fluid"></a></li><li class=""><a><img src="./React App_files/image-2.27dca46c.jpeg" class="img-item img-fluid"></a></li><li class=""><a><img src="./React App_files/image-3.67ef571c.jpg" class="img-item img-fluid"></a></li><li class=""><a><img src="./React App_files/image-4.d5e8dcd1.jpg" class="img-item img-fluid"></a></li></ul></div></div></div></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="./React App_files/jquery-3.3.1.slim.min.js.descarga" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./React App_files/popper.min.js.descarga" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./React App_files/bootstrap.min.js.descarga" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="./React App_files/bundle.js.descarga"></script><script src="./React App_files/0.chunk.js.descarga"></script><script src="./React App_files/main.chunk.js.descarga"></script><script src="./React App_files/main.ce7a6462fde3cb5d46cf.hot-update.js.descarga"></script>
+
+</body></html>
